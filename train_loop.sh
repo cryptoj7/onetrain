@@ -2,18 +2,19 @@
 
 # List of config files (adjust these to your actual 5 configs)
 configs=(
-  "vlad-lora.json"
-  "cassie-lora.json"
-  "flux-lora-stable.json"
-  "rank2-lora.json"
-  "config.json"
+  "li4.json"
+  "geo-lora.json"
 )
 
 # List of input datasets (adjust these to your actual 3 datasets)
 datasets=(
-  "geo-carmilla-pruned"
-  "carmilla-pruned"
-  "carmilla-flux-prune"
+  "Ali"
+  "Angel"
+  "Anna"
+  "Ailiyah"
+  "Gwen"
+  "Fallon"
+  "Tatiana
 )
 
 # Where your onetrainer script is located
@@ -46,6 +47,13 @@ for config in "${configs[@]}"; do
         # Generate a random concept (3–6 chars, no vowels)
         concept="$(generate_random_concept)"
 
+        # Decide which concept string to use
+        if [[ "$dataset_basename" == "Ali" || "$dataset_basename" == "Angel" ]]; then
+            concept_str="n0xyz man"
+        else
+            concept_str="n0xyz woman"
+        fi
+
         echo "Now training on config: $config, dataset: $dataset"
         echo "Random concept is: $concept"
 
@@ -57,7 +65,7 @@ for config in "${configs[@]}"; do
           --log "$log_file" \
           --output "$output_file" \
           --tmp "$tmp_dir" \
-          --concept "$concept" \
+          --concept "$concept_str" \
           --config "$config" \
           --type flux \
           --sample \
