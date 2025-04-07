@@ -14,7 +14,7 @@ datasets=(
   "Ailiyah"
   "Gwen"
   "Fallon"
-  "Tatiana
+  "Tatiana"
 )
 
 # Where your onetrainer script is located
