@@ -322,7 +322,7 @@
     "additional_embeddings": [],
     "embedding_weight_dtype": "FLOAT_32",
     "lora_model_name": "",
-    "lora_rank": 64,
+    "lora_rank": 12,
     "lora_alpha": 1,
     "lora_decompose": false,
     "lora_weight_dtype": "FLOAT_32", 
